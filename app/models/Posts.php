@@ -6,6 +6,8 @@ class Posts extends \Framework\AbstractModel {
 		$this->created = time();
 	}
 
+	// retrive the latest post by id
+	// if the requested post is not found - return null
 	public function getPostsAfterPost($id) {
 		$post = $this->findFirst(
 			array(
