@@ -1,7 +1,9 @@
 /* nice place to js */
 
+var period = 20000 // 20 seconds
+
 $(document).ready(function() {
-	setTimeout(function() {checkForNewPosts()}, 10000);
+	setTimeout(function() {checkForNewPosts()}, period);
 });
 
 function checkForNewPosts() {
@@ -22,7 +24,7 @@ function checkForNewPosts() {
 		for (var index in resultSet.data) {
 			addItem(resultSet.data[index]);
 		}
-		setTimeout(function() {checkForNewPosts()}, 5000);
+		setTimeout(function() {checkForNewPosts()}, period);
 	})
 	.fail(function(data, textStatus, jqXHR) {
 		alert("Error has occurred. Please, reload the page!");
