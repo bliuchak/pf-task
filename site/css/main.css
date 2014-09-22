@@ -1,0 +1,9 @@
+/* nice place to some css */
+
+.navbar ul {
+	padding: 0;
+}
+
+.navbar ul li {
+	display: inline;
+}

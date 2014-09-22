@@ -1,0 +1,9 @@
+<p>Hello This is posts:</p>
+<div class="content" id="content">
+<? foreach ($this->view->getVar('posts') as $post) { ?>
+	<div class="item" id="item_<?=$post->id?>" data-id="<?=$post->id?>">
+		<p><?=$this->view->getVar('escaper')->escapeHtml($post->title)?>&nbsp;<small>(Created on <?=date('M j, Y @H:i', $post->created)?>)</small></p>
+		<span><?=$this->view->getVar('escaper')->escapeHtml($post->text)?></span>
+	</div>
+<? } ?>
+</div>

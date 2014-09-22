@@ -1,0 +1,34 @@
+<p>this is admin view</p>
+
+<?=Phalcon\Tag::form(array($this->view->form->getAction())) ?>
+
+	<p>
+		<label for="<?=$form->get('title')->getName()?>"><?=$form->get('title')->getLabel()?>:</label>
+<?=$form->render('title') ?>
+		<span>
+<?php
+	if (isset($this->view->getVar('errors')[$form->get('title')->getName()])) {
+		echo $this->view->getVar('escaper')->escapeHtml($this->view->getVar('errors')[$form->get('title')->getName()]);
+	}
+?>
+		</span>
+	</p>
+
+	<p>
+		<label for="<?=$form->get('text')->getName()?>"><?=$form->get('text')->getLabel()?>:</label>
+<?=$form->render('text') ?>
+		<span>
+<?php
+	if (isset($this->view->getVar('errors')[$form->get('text')->getName()])) {
+		echo $this->view->getVar('escaper')->escapeHtml($this->view->getVar('errors')[$form->get('text')->getName()]);
+	}
+?>
+		</span>
+	</p>
+	</p>
+
+	<p>
+<?=$form->render('submit') ?>
+	</p>
+
+<?=Phalcon\Tag::endForm ()?>
